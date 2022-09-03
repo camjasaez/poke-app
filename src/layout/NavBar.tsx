@@ -1,15 +1,10 @@
 import { Pokeball, PokeLogo, Sandwich } from '../utils/svg/svg';
 import { Link } from 'react-router-dom';
-import {
-  selectCount,
-  selectPokemons,
-} from '../features/favorites/favoriteSlice';
+import { selectCount } from '../features/favorites/favoriteSlice';
 import { useSelector } from 'react-redux';
 
 const NavBar = () => {
   const counterFav = useSelector(selectCount);
-  const pokemons = useSelector(selectPokemons);
-  console.log(pokemons);
   return (
     <header className="relative z-10 min-h-[10vh] min-w-full bg-Third drop-shadow-lg">
       <nav className=" mx-auto flex flex-wrap items-center justify-around">
