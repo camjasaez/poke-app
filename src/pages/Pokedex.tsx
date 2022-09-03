@@ -6,7 +6,7 @@ const Pokedex = () => {
   return (
     <main className="flex min-h-[90vh]  flex-col  items-center bg-gradient-to-b from-Third to-Primary">
       <TitlePoke />
-      <SearchPoke />
+      {/* <SearchPoke /> */}
       <ListPoke />
     </main>
   );

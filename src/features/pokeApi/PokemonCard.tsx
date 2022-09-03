@@ -3,10 +3,14 @@ import { colors } from '../../utils/colors';
 import { useEffect, useState } from 'react';
 import { Pokeball } from '../../utils/svg/svg';
 import { useDispatch } from 'react-redux';
-import { addFavorite } from '../../features/favorites/favoriteSlice';
+import {
+  addFavorite,
+  removeFavorite,
+} from '../../features/favorites/favoriteSlice';
 
 interface Props {
   name: string;
+  add: boolean;
 }
 
 interface ResponsePokeType {
@@ -14,7 +18,7 @@ interface ResponsePokeType {
   slot: number;
 }
 
-const PokemonCard = ({ name }: Props) => {
+const PokemonCard = ({ name, add }: Props) => {
   const { data, error, isLoading } = useFetchPokemonByNameQuery(name);
   const [color, setColor] = useState('');
   const dispatch = useDispatch();
@@ -24,7 +28,7 @@ const PokemonCard = ({ name }: Props) => {
   }, [data]);
 
   const handleClickPokeBall = () => {
-    dispatch(addFavorite(name));
+    add ? dispatch(addFavorite(name)) : dispatch(removeFavorite(name));
   };
 
   return isLoading ? (

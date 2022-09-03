@@ -7,7 +7,7 @@ const ListPoke = () => {
   return (
     <section className=" flex flex-wrap justify-center ">
       {data?.results?.map(({ name }: any) => (
-        <PokemonCard key={name} name={name} />
+        <PokemonCard key={name} name={name} add={true} />
       ))}
     </section>
   );

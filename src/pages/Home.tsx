@@ -6,7 +6,7 @@ const Home = () => {
     navigate('/pokedex');
   };
   return (
-    <main className="flex min-h-[90vh] flex-col items-center bg-gradient-to-b from-Third to-Primary">
+    <main className="flex min-h-[90vh] flex-col items-center bg-gradient-to-b from-Third to-Primary md:flex-row">
       <article className="order-2 flex min-w-[50vw] flex-col items-center justify-evenly text-center">
         <section className="m-4 w-[320px] min-w-[50%] items-center">
           <h1 className="  text-4xl font-bold leading-[49px] tracking-[4px]  ">
@@ -27,10 +27,10 @@ const Home = () => {
           See pokemons
         </button>
       </article>
-      <article className="order-1 flex max-w-[50vw] items-center">
+      <article className="order-1 flex max-w-[50vw] items-center md:max-w-[40%] lg:max-w-[40%]">
         <img
           src="/img/pikachu.png"
-          className="max-h-[50%] object-contain"
+          className="object-contain "
           // className="mix-w-lg max-w-lg object-contain"
         />
       </article>

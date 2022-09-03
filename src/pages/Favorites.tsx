@@ -8,7 +8,7 @@ const Favorites = () => {
     <main className="min-h-[90vh] bg-gradient-to-b from-Third to-Primary">
       <div className="flex flex-wrap justify-center">
         {pokemons?.map(({ name }: any) => (
-          <PokemonCard key={name} name={name} />
+          <PokemonCard key={name} name={name} add={false} />
         ))}
       </div>
     </main>

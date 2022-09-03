@@ -30,12 +30,21 @@ export const favoriteSlice = createSlice({
                 state.totalQuantity++
                 state.pokemons.push({ name: action.payload })
             }
+        },
+        removeFavorite: (state: FavoriteState, action: PayloadAction<String>) => {
+            const index = state.pokemons.findIndex(pokemon =>
+                pokemon.name === action.payload)
+
+            if (index !== -1) {
+                state.totalQuantity--
+                state.pokemons.splice(index, 1)
+            }
         }
     }
 })
 
 
-export const { addFavorite } = favoriteSlice.actions
+export const { addFavorite, removeFavorite } = favoriteSlice.actions
 export default favoriteSlice.reducer
 export const selectCount = (state: RootState) => state.favorite.totalQuantity
 export const selectPokemons = (state: RootState) => state.favorite.pokemons
